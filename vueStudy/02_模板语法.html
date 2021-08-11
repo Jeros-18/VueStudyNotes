@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js">
+
+    </script>
+</head>
+<body>
+
+    <div id="root">
+        <h1>插值语法</h1>
+        hello {{name}}
+        <h1>指令语法</h1>
+        <a v-bind:href="url">点我去{{url}}</a><br>
+        <a :href="school.name">点我去{{school.name}}</a>
+    </div>
+    
+
+    <script>
+        Vue.config.productionTip = false
+
+        new Vue({
+            el: "#root",
+            data() {
+                return {
+                    name:"jahui",
+                    url:"www.baidu",
+                    school:{
+                        name: "https://www.baidu.com/?tn=40020637_7_oem_dg",
+                        age: "21"
+                    }
+                }
+            },
+        })
+           
+    </script>
+
+    
+</body>
+</html>

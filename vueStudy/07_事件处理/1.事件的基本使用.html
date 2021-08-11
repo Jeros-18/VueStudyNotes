@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <h1>欢迎来到{{name}}</h1>
+        <button @click="showInfo1">点我提示信息1（不传参）</button>
+        <button @click="showInfo2($event,66)">点我提示信息2（传参）</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+               return {
+                  name: "jahui"
+               }
+            },
+
+            methods: {
+                showInfo1(){
+                    alert("showInfo1")
+                },
+                showInfo2(event, number){
+                    console.log(event, number)
+                    alert("showInfo2")
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
