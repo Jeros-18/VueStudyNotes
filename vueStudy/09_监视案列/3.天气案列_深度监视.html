@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>a的值：{{numbs.a}}</h2>
+        <button @click="numbs.a++">点我a++</button>  <br>
+        <h2>b的值：{{numbs.b}}</h2>  <br>
+        <button @click="numbs.b++">点我a++</button>  <br>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+
+        const vm = new Vue({
+            el: '#app',
+            data() {
+               return {
+                  numbs:{
+                      a:1,
+                      b:2
+                  }
+               }
+            },
+
+            watch:{
+                // 'numbs.a':{
+        
+                //     handler(){
+                //         console.log('a被改变了')
+                //     }
+                // },
+
+                'numbs':{
+                    deep:true,
+                    handler(){
+                        console.log('numbs被改变了')
+                    }
+                }
+            }
+                  
+        })
+
+       
+    </script>
+</body>
+
+</html>
