@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        Vue.config.productionTip = false
+
+
+
+        const student = Vue.extend({
+            name:'student',
+            template:`
+            <div>
+                <h2>学生姓名：{{name}}</h2>
+                <h2>学生年龄:{{age}}</h2>
+                </div>
+            `,
+            data() {
+                return {
+                    name:'jaui',
+                    age:20
+                }
+            },
+        })
+
+
+        const school = Vue.extend({
+            name:'school',
+            template:`
+            <div>
+                <h2>学校名{{school}}</h2>
+                <h2>学校地址:{{adress}}</h2>
+                <student></student>
+                </div>
+            `,
+            data() {
+                return {
+                    school:'安徽工程大学',
+                    adress:'芜湖市鸠江区'
+                }
+            },
+            components:{
+				student
+			}
+        })
+
+
+        const hello = Vue.extend({
+            template:`
+            <h1>{{msg}}</h1>
+            `,
+            data() {
+                return {
+                    msg:'欢迎来到安徽工程大学'
+                }
+            },
+        })
+
+
+        const app = Vue.extend({
+            template:`
+                <div>
+                    <hello></hello>
+                    <school></school>
+                    </div>
+            `,
+            components:{
+                hello,
+                school
+            }
+        })
+
+
+
+
+        new Vue({
+            el: '#app',
+            data() {
+               return {
+                  
+               }
+            },
+            template:`
+            <app></app>
+            `,
+            components:{
+                app
+            }
+    
+        })
+    </script>
+</body>
+
+</html>
