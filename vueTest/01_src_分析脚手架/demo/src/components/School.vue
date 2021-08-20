@@ -1,5 +1,5 @@
 <template>
-    <div class=".demo">
+    <div class="demo">
         <h2>学校名称：{{name}}</h2>
         <h2>学校地址：{{adress}}</h2>
         <button @click="showName">点我提示学校名称</button>
@@ -25,6 +25,6 @@ export default {
 
 <style>
     .demo{
-        background-color: aqua;
+        background-color:blue;
     }
 </style>
